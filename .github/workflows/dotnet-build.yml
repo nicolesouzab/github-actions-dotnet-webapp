@@ -1,0 +1,18 @@
+name : GitHub4Woman Modulo 4
+
+on:
+    push: #Ação acionada pelo evento push
+        branches: [ "main" ]
+    schedule:
+        - cron: '0 * * * *' # Ação executada a cada hora.
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Action de checks-out do repositorio
+            - uses: actions/checkout@v4
+      
+            - name: Rodar script de uma linha
+              run: echo Bem Vinda ao Curso GitHub4Woman!
